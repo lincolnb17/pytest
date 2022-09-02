@@ -1,5 +1,4 @@
 #importing modules
-import pytest
 import requests
 import json
 #API_URL FOR CREATE USER
@@ -10,8 +9,8 @@ url ="https://reqres.in/api/users"
 loginData= open('D:\\freelance\\pytest\\data\\loginData.json', 'r')
 json_input = loginData.read()
 request_json = json.loads(json_input)
-#sending post request with json body
 
+#sending post request with json body
 res = requests.post(url,json_input)
 print(res.content)
 if res.status_code==201:

@@ -1,6 +1,5 @@
 #importing modules
 from email import header, message
-import pytest
 import requests
 import jsonpath
 import json
