@@ -15,7 +15,7 @@ class User:
 		self.email = email
 		self.password = password
 #create object
-user1 = User('Lincoln', 'lincoln@nepal.com','Hello123')
+user1 = User('Lincoln', 'lincoln123@nepal.com','Hello123')
 
 #convert to JSON string
 loginDetails = json.dumps(user1.__dict__)
@@ -23,5 +23,9 @@ loginDetails = json.dumps(user1.__dict__)
 headers = {"Content-Type": "application/json; charset=utf-8"}
 #sending post request
 res = requests.post(url,loginDetails,headers=headers)
-
 print(res.content)
+if res.status_code==200:
+    print("Test Passed")
+else:
+    print("Test Failed")
+
