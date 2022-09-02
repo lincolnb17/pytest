@@ -1,7 +1,8 @@
 #importing modules
-from email import header
+from email import header, message
 import pytest
 import requests
+import jsonpath
 import json
 
 #API_URL FOR CREATE USER
@@ -15,7 +16,7 @@ class User:
 		self.email = email
 		self.password = password
 #create object
-user1 = User('Lincoln', 'lincoln123@nepal.com','Hello123')
+user1 = User('Lincoln', 'lincoln12ds3@nepal.com','Hello123')
 
 #convert to JSON string
 loginDetails = json.dumps(user1.__dict__)
@@ -24,7 +25,11 @@ headers = {"Content-Type": "application/json; charset=utf-8"}
 #sending post request
 res = requests.post(url,loginDetails,headers=headers)
 print(res.content)
-if res.status_code==200:
+#fetching data from json response
+json_res = json.loads(res.text)
+message=jsonpath.jsonpath(json_res,'message')
+## validating response message
+if message[0]=='success':
     print("Test Passed")
 else:
     print("Test Failed")
