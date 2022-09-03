@@ -15,7 +15,7 @@ class User:
 		self.email = email
 		self.password = password
 #create object
-user1 = User('Lincoln', 'lincoln12ds3@nepal.com','Hello123')
+user1 = User('Lincoln', 'lincoln12ds43@nepal.com','Hello123')
 
 #convert to JSON string
 loginDetails = json.dumps(user1.__dict__)
