@@ -6,7 +6,7 @@ def test_register_user():
 
     data = {
     'name':"Lincoln",
-    'email':'bhattachanl1d7@gmail.com',
+    'email':'sandildasdsafdsdadsadddfdsfsdf122323dasdsadasd@gmail.com',
     'password':'123456'
     }
     register_data = json.dumps(data)
@@ -14,16 +14,19 @@ def test_register_user():
 
     # sending post request
     res = requests.post(url,register_data, headers=headers)
-    print(res.content)
+    # print(res.content)
     #validating status code
-    json_res1 = json.loads(res.text)
+    print(type(res))
+    json_res1 = json.loads(res.content)
+
     print(json_res1)
+    print(json_res1["data"]["Email"])
     assert res.status_code == 200
 
 def test_login_user():
     url ="http://restapi.adequateshop.com/api/authaccount/login"
     data = {
-    'email':'Developer51@gmail.com',
+    'email':'Developer5@gmail.com',
     'password':'123456'
     }
     login_data = json.dumps(data)
@@ -33,12 +36,9 @@ def test_login_user():
     res = requests.post(url,login_data, headers=headers)
     # print(res.content)
     #validating status code
+
+    json_res = json.loads(res.content)
+    # print(json_res["code"])
+    # print(json_res)
     assert res.status_code == 200
-    json_res = json.loads(res.text)
-    print(json_res["code"])
-    print(json_res)
-
-
-
-
 
