@@ -7,7 +7,7 @@ def test_register_user():
     url="http://restapi.adequateshop.com/api/authaccount/registration"
     data = {
     'name':"Lincoln",
-    'email':'tristin3D2a@gmail.com',
+    'email':'tristinalincoln@gmail.com',
     'password':'123456'
     }
     register_data = json.dumps(data)

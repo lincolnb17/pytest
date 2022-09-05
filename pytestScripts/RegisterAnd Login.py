@@ -8,7 +8,7 @@ def test_register_user():
 
     data = {
     'name':"Lincoln",
-    'email':'laddffffdasdsd1ddd1sddddd123o1@gmail.com',
+    'email':'kathamnduwww@gmail.com',
     'password':'123456'
     }
     register_data = json.dumps(data)
