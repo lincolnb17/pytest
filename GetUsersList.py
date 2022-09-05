@@ -9,6 +9,7 @@ res = requests.get(url)
 print(res.content)
 
 #validating status code  and  this can also check by assert function
+
 if res.status_code==200:
     print("Test Passed")
 else:
