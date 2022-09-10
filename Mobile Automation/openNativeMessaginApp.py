@@ -1,13 +1,9 @@
-import time
 
-from appium.webdriver.webdriver import WebDriver as AppiumDriver
 from appium import webdriver
-from appium import webdriver
-from appium.webdriver.common.mobileby import MobileBy
-from selenium.webdriver.support.ui import WebDriverWait
-import time
+from selenium.webdriver.common.by import By
 
-desired_cap = {
+import time
+desired_capabilities = {
     "deviceName": "emulator-5554",
     "platformName": "Android",
     "automationName": "uiautomator2",
@@ -15,8 +11,14 @@ desired_cap = {
     "appActivity": "com.google.android.apps.messaging.ui.ConversationListActivity"
     # "appActivity": "com.google.android.apps.messaging.home.HomeActivity"
 }
-driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_cap)
-driver.find_element_by_xpath("//android.widget.ImageView[@bounds='[0,210][1080,1794]']").click();
+self.driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_capabilities)
 
+
+# driver.find_element_by_xpath("//android.widget.ImageView[@content-desc="Start new conversation"]").click()
+# driver.find_element_by_id("com.google.android.apps.messaging:id/start_new_conversation_button").click()
+# driver.find_element_by_xpath("//android.widget.ImageView[@index='2']").click()
+open=self.driver.find_element(By.ID,'com.google.android.apps.messaging:id/start_new_conversation_button')
+open.click()
+time.sleep(60)
 
 
