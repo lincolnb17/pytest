@@ -10,6 +10,9 @@ desired_cap ={
 }
 
 driver= webdriver.Remote("http://localhost:4723/wd/hub",desired_cap)
+driver.find_element_by_id("com.android.mms:id/recipients_editor").sendKeys("3453535");
+
+
 
 
  
