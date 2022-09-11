@@ -6,18 +6,19 @@ desired_capabilities = {
     "deviceName": "1B11293210NA103R",
     "platformName": "Android",
     "automationName": "uiautomator2",
-    "appPackage": "com.p1.chompsms",
-    "appActivity": "com.p1.chompsms.activities.QuickCompose"
+    "appPackage": "com.simplemobiletools.smsmessenger",
+    "appActivity": "com.simplemobiletools.smsmessenger.activities.NewConversationActivity"
 }
 #conneting with appium server
 driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_capabilities)
 
 #findind elements and automating
-# driver.find_element(By.ID,'com.android.mms:id/recipients_editor').send_keys('98404409049')
-# driver.find_element(By.ID,'com.android.mms:id/embedded_text_editor').send_keys('Good Morning')
-# driver.find_element(By.ID,'com.android.mms:id/send_button_sms').click()
-# driver.quit()
+driver.find_element(By.ID,'com.simplemobiletools.smsmessenger:id/new_conversation_address').send_keys('98404409049')
+driver.find_element(By.ID,'com.simplemobiletools.smsmessenger:id/new_conversation_confirm').click()
+driver.find_element(By.ID,'com.simplemobiletools.smsmessenger:id/thread_type_message').send_keys('Good Morning')
+driver.find_element(By.ID,'com.simplemobiletools.smsmessenger:id/thread_send_message').click()
+
+
 
 #exit
-
 
