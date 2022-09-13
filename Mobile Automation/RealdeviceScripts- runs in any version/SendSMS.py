@@ -1,3 +1,5 @@
+##befor running this code please install 190_SendMessage.apk present apk folder
+
 #importing modules and packages
 from appium import webdriver
 from selenium.webdriver.common.by import By
@@ -8,7 +10,7 @@ desired_capabilities = {
     "automationName": "uiautomator2",
     "appPackage": "com.android_coding.sendmessage",
     "appActivity": "com.android_coding.sendmessage.MainActivity",
-    "autoGrantPermissions":  "true"
+    "autoGrantPermissions": "true"
 }
 #conneting with appium server
 driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_capabilities)

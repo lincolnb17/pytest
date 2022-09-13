@@ -20,5 +20,5 @@ def testcreenShot():
     file_name = 'screenshot.png'
 
     # taking screenshot
-    driver.save_screenshot("D:/freelance/pytest/Mobile Automation/Screenshots/" + file_name)
+    driver.save_screenshot("D:/freelance/pytest- runs in emulator 5.1/Mobile Automation/Screenshots/" + file_name)
 
