@@ -3,7 +3,7 @@ from appium import webdriver
 from selenium.webdriver.common.by import By
 #list of desired capabilities
 desired_capabilities = {
-    "deviceName": "emulator-5554",
+    "deviceName": "emulator-5554",  ## emulator device name
     "platformName": "Android",
     "automationName": "uiautomator2",
     "appPackage": "com.android.mms",

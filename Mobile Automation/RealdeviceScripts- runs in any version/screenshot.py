@@ -8,7 +8,7 @@ from appium.common.logger import logger
 
 #defining desired Capabilites
 desired_capabilities = {}
-desired_capabilities['deviceName'] = '1B11293210NA103R'
+desired_capabilities['deviceName'] = '1B11293210NA103R'  ##mention your device id here
 desired_capabilities['platformName'] = 'Android'
 desired_capabilities['appPackage'] ='com.google.android.apps.messaging'
 desired_capabilities['appActivity'] ='com.google.android.apps.messaging.home.HomeActivity'
@@ -25,4 +25,4 @@ driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_capabilities)
 file_name = 'screenshot.png'
 time.sleep(5)
 #taking screenshot
-driver.save_screenshot("D:/freelance/pytest- runs in emulator 5.1/Mobile Automation/Screenshots/" + file_name)
+driver.save_screenshot("D:/freelance/pytest- runs in emulator 5.1/Mobile Automation/Screenshots/" + file_name)  #give your  local machine path here

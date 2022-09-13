@@ -8,7 +8,7 @@ def testcreenShot():
 
     # defining desired Capabilites
     desired_capabilities = {}
-    desired_capabilities['deviceName'] = 'emulator-5554'
+    desired_capabilities['deviceName'] = 'emulator-5554'  #emulator id
     desired_capabilities['platformName'] = 'Android'
     desired_capabilities['appPackage'] = 'com.android.mms'
     desired_capabilities['appActivity'] = 'com.android.mms.ui.ComposeMessageActivity'

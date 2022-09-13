@@ -7,7 +7,7 @@ from appium.common.logger import logger
 
 #defining desired Capabilites
 desired_capabilities = {}
-desired_capabilities['deviceName'] = 'emulator-5554'
+desired_capabilities['deviceName'] = 'emulator-5554' ## emulator device name
 desired_capabilities['platformName'] = 'Android'
 desired_capabilities['appPackage'] ='com.android.mms'
 desired_capabilities['appActivity'] ='com.android.mms.ui.ComposeMessageActivity'
@@ -20,4 +20,4 @@ driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_capabilities)
 file_name = 'screenshot.png'
 
 #taking screenshot
-driver.save_screenshot("D:/freelance/pytest- runs in emulator 5.1/Mobile Automation/Screenshots/" + file_name)
+driver.save_screenshot("D:/freelance/pytest- runs in emulator 5.1/Mobile Automation/Screenshots/" + file_name)  #path of your local machine

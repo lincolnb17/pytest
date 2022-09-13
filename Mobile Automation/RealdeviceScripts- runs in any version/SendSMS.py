@@ -5,7 +5,7 @@ from appium import webdriver
 from selenium.webdriver.common.by import By
 #list of desired capabilities
 desired_capabilities = {
-    "deviceName": "1B11293210NA103R",
+    "deviceName": "1B11293210NA103R", ## real device  id
     "platformName": "Android",
     "automationName": "uiautomator2",
     "appPackage": "com.android_coding.sendmessage",
