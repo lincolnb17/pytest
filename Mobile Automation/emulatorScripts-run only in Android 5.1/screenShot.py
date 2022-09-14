@@ -20,4 +20,4 @@ driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_capabilities)
 file_name = 'screenshot.png'
 
 #taking screenshot
-driver.save_screenshot("D:/freelance/pytest- runs in emulator 5.1/Mobile Automation/Screenshots/" + file_name)  #path of your local machine
+driver.save_screenshot("D:/freelance/finals-scripts-with-error-handling/Mobile Automation/Screenshots/" + file_name)  #path of your local machine
