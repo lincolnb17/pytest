@@ -1,18 +1,16 @@
-import pytest
+import time
 from appium import webdriver
 from selenium.webdriver.common.by import By
-from appium.webdriver.common.touch_action import TouchAction
-import time
-from appium.common.logger import logger
+import os
 
+#this will start  appium server automatically
+os.system("start /B start cmd.exe @cmd /k appium")
 #sending information
-phone_no ='1234567890'
+phone_no ='9821322643'
 text='Good Morning'
 file_name = 'screenshot.png'
 
 def testsendsms():
-
-
     #device and app details
     deviceId="1B11293210NA103R"
     path = "D:\\freelance\\pytest\\Mobile Automation\\apk\\verizon.apk"  ##path of the apk file
@@ -33,33 +31,26 @@ def testsendsms():
 
     # conneting with appium server
 
-    driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_capabilities)
-
-    button=driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/start')
-    button.click()
-    print(button)
-
-
-
-
-
-
-
-
-
+    driver = webdriver.Remote("http://localhost:4723/wd/hub",desired_capabilities)
+    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/start').click()
+    time.sleep(1)
+    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/skip_provisioning_tv').click()
+    time.sleep(1)
+    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/composeFab').click()
+    time.sleep(1)
+    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/curRecip').send_keys(phone_no)
+    time.sleep(1)
+    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/compose_embedded_text_editor').send_keys(text)
+    time.sleep(1)
+    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/composebtnSend').click()
 
 
 
-    # #checking if the phone is correct or not
-    # if len(phone_no) == 10 and type(phone_no == int):
-    #     driver.find_element(By.ID, 'com.android_coding.sendmessage:id/et_phone').send_keys(phone_no)
-    #     driver.find_element(By.ID, 'com.android_coding.sendmessage:id/et_message').send_keys(text)
-    #     driver.find_element(By.ID, 'com.android_coding.sendmessage:id/bt_send').click()
-    #     driver.save_screenshot('D:/freelance/pytest/Mobile Automation/finals-scripts-with-error-handling/Screenshots' + file_name)
-    # else:
-    #     print("Enter valid phone number")
-    #     assert 1 == 2
 
 
 
-    # exit
+
+
+
+
+

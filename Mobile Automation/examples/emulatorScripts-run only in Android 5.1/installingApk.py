@@ -1,5 +1,8 @@
 from appium import webdriver
- 
+from appium.webdriver.appium_service import AppiumService
+appium_service = AppiumService()
+hello =appium_service.start()
+print(hello)
 desired_cap ={
   "deviceName": "emulator-5554",
   "platformName": "Android",
