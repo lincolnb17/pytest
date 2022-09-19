@@ -10,7 +10,7 @@ phone_no ='9821322643'
 text='Good Morning'
 file_name = 'screenshot.png'
 
-def testsendsms():
+def testreceivesms():
     #device and app details
     deviceId="1B11293210NA103R"
     path = "D:\\freelance\\pytest\\Mobile Automation\\apk\\verizon.apk"  ##path of the apk file
@@ -43,6 +43,7 @@ def testsendsms():
     if sender.text== '(982) 132-2643' and sms.text =='Hello':
         print("SMS sucessfully received")
     else:
+
         print("SMS not received")
 
 
