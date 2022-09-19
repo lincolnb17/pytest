@@ -1,3 +1,9 @@
+#
+# Setup
+# 1. install appium package via terminal or command prompt  t.ie npm install -g appium
+# 2.Set environment path variable of appium package run to commands  i.e path=C:\Users\bhatt\AppData\Roaming\npm\node_modules\appium\build\lib\main.js
+#
+
 import time
 from appium import webdriver
 from selenium.webdriver.common.by import By
@@ -6,7 +12,8 @@ import os
 #sending information
 phone_no ='9821322643'
 text='Good Morning'
-file_name = 'screenshot.png'
+
+#staring appium server at PORT=4723
 os.system("start /B start cmd.exe @cmd /k appium")
 def testsendsms():
     # device and app details
@@ -40,9 +47,9 @@ def testsendsms():
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/composebtnSend').click()
 
 
-
-# os.system("start /B start cmd.exe @cmd /k appium")
+#staring appium server at PORT=4724
 os.system("start /B start cmd.exe @cmd /k appium -a 0.0.0.0 -p 4724")
+#validating sms at receiver side
 def testreceivesms():
     #device and app details
     deviceId2="1B11293210NA103R"
@@ -63,8 +70,8 @@ def testreceivesms():
     }
 
     # conneting with appium server
-
     driver = webdriver.Remote("http://localhost:4724/wd/hub",desired_capabilities)
+
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/start').click()
     time.sleep(1)
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/skip_provisioning_tv').click()
@@ -73,7 +80,7 @@ def testreceivesms():
     time.sleep(1)
     sms=driver.find_element(By.ID,'com.verizon.messaging.vzmsgs:id/subject')
     time.sleep(1)
-    if sender.text== '(982) 132-2643' and sms.text =='Good Morning':
+    if sender.text== '(982) 132-2643' and sms.text == text:
         print("SMS sucessfully received")
     else:
 
