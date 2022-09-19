@@ -74,7 +74,7 @@ def testreceivesms():
     try:
         driver = webdriver.Remote("http://localhost:4724/wd/hub",desired_capabilities)
     except:
-        print("Appium Server is not running at PORT=4723")
+        print("Appium Server is not running at PORT=4724")
 
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/start').click()
     time.sleep(1)
