@@ -8,6 +8,7 @@ import time
 from appium import webdriver
 from selenium.webdriver.common.by import By
 import os
+from appium.webdriver.common.touch_action import TouchAction
 #sending information
 phone_no ='9821322643'
 text='Good Morning'
@@ -40,7 +41,11 @@ def testsendsms():
         print("Appium Server is not running at PORT= 4723")
 
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/start').click()
-    time.sleep(1)
+    time.sleep(3)
+    TouchAction(driver).tap(x=1198, y=1473).perform()
+    time.sleep(3)
+    TouchAction(driver).tap(x=1068, y=1908).perform()
+    time.sleep(3)
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/skip_provisioning_tv').click()
     time.sleep(1)
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/composeFab').click()
@@ -50,6 +55,9 @@ def testsendsms():
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/compose_embedded_text_editor').send_keys(text)
     time.sleep(1)
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/composebtnSend').click()
+    time.sleep(2)
+    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/okayTv').click()
+
 
 
 #staring appium server at PORT=4724
@@ -90,3 +98,5 @@ def testreceivesms():
 
         print("SMS not received")
         assert 1==-1
+
+

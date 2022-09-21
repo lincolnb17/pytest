@@ -1,10 +1,11 @@
 import time
 from appium import webdriver
 from selenium.webdriver.common.by import By
+from appium.webdriver.common.touch_action import TouchAction
+import sys
 import os
-
 # # #this will start  appium server automatically
-os.system("start /B start cmd.exe @cmd /k appium")
+# os.system("start /B start cmd.exe @cmd /k appium")
 #sending information
 phone_no ='9821322643'
 text='Hello'
@@ -30,17 +31,16 @@ def testsendsms():
     }
      # conneting with appium server
     driver = webdriver.Remote("http://localhost:4723/wd/hub",desired_capabilities)
+
     driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/start').click()
+    time.sleep(3)
+    TouchAction(driver).tap(x=1198, y=1473).perform()
+    time.sleep(3)
+    TouchAction(driver).tap(x=1068, y=1908).perform()
     time.sleep(1)
-    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/skip_provisioning_tv').click()
+    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/profile_mdn_custom_view').send_keys(9867916462) ##own mobile number
     time.sleep(1)
-    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/composeFab').click()
-    time.sleep(1)
-    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/curRecip').send_keys(phone_no)
-    time.sleep(1)
-    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/compose_embedded_text_editor').send_keys(text)
-    time.sleep(1)
-    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/composebtnSend').click()
+    driver.find_element(By.ID, 'com.verizon.messaging.vzmsgs:id/nextTextView').click()
 
 
 
